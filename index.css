@@ -1,0 +1,222 @@
+:root {
+  --accent: #0a66c2;
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --radius: 8px;
+  --section-border: #c00;      /* rouge */
+  --section-border-width: 4px;
+  --coffee: #6f4e37;           /* café */
+  --mouse-gray: #d9d9d9;       /* gris souris */
+  --smoke-blue: #cfe8f7;       /* bleu fumée (modifiable) */
+}
+
+/* Reset / base */
+* { box-sizing: border-box; 
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; 
+}
+
+/* Header (café) */
+.site-header {
+  background: var(--coffee);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: none;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; 
+}
+.name { margin: 0; font-size: 1.1rem; color: #fff; 
+}
+.surname { font-weight: 700; 
+}
+.main-nav { position: relative; 
+}
+.nav-list { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; 
+}
+.nav-list a {
+  text-decoration: none;
+  color: #fff; /* links in header white */
+  padding: .35rem .5rem;
+  border-radius: 6px;
+}
+.nav-list a:hover { background: rgba(255,255,255,0.08); color: #fff; 
+}
+.nav-toggle { display: none; background: none; border: 0; font-size: 1.2rem; cursor: pointer; color: #fff; 
+}
+
+/* Sections: red top border delimiting each section */
+.section {
+  padding: 2rem 0;
+  border-top: var(--section-border-width) solid var(--section-border);
+  padding-top: calc(2rem + 1.25rem);
+  background: transparent;
+}
+
+/* Home: spacing between text and image */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2.5rem;
+  align-items: center;
+}
+.home-left .lead { color: var(--muted); margin-top: .5rem; 
+}
+.hero-img { width: 100%; max-width: 360px; border-radius: 10px; display: block; 
+}
+
+/* About: background gris souris, photo in corner (now round) */
+#about {
+  position: relative;
+  background: var(--mouse-gray);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.about {
+  display: block;
+}
+.about-text { margin-right: 240px; 
+} /* reserve space for absolute circular photo (adjust if you change size) */
+
+/* .about-photo positioned in top-right and circular */
+.about-photo {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 180px;
+  height: 180px;            /* force square to make perfect circle */
+  max-width: 40%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 50%;       /* circle */
+  overflow: hidden;         /* clip image inside circle */
+  display: block;
+}
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* crop so image fills the circle */
+  display: block;
+}
+
+/* Projects: grid responsive; cards split 60% text / 40% image on desktop */
+#projects h3 { text-align: center; color: brown; margin-top: 0; 
+}
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; 
+}
+.project-card {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 0;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(20,30,40,0.06);
+  overflow: hidden;
+  align-items: stretch;
+  min-height: 140px;
+}
+.project-body { padding: .9rem; 
+}
+.project-img { width: 100%; height: 100%; object-fit: cover; display: block; 
+}
+
+/* Skills: background gris souris */
+#skills { background: var(--mouse-gray); border-radius: 8px; padding: 1rem; 
+}
+#skills h3 { text-align: center; color: brown; margin-top: 0; 
+}
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; 
+}
+.skill-block { background: var(--card); padding: 1rem; border-radius: 8px; 
+}
+.skill { margin: .6rem 0; 
+}
+.skill-name { display: block; font-size: .95rem; margin-bottom: .25rem; color: var(--muted); 
+}
+.bar { background: #e9eef5; border-radius: 999px; height: 10px; overflow: hidden; 
+}
+.bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #3aa0ff); border-radius: 999px; 
+}
+
+/* Contact section background = bleu fumée; form centered and full width inputs */
+#contact {
+  background: var(--smoke-blue);  /* bleu fumée */
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+.contact form {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(10,20,30,0.04);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.form-row { margin-bottom: .6rem; display: flex; flex-direction: column; }
+input[type="text"], input[type="email"], textarea {
+  padding: .6rem;
+  border: 1px solid #d7dbe0;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-actions { display: flex; gap: .6rem; align-items: center; margin-top: .5rem; justify-content: center; }
+.btn { background: var(--accent); color: #fff; border: 0; padding: .6rem .9rem; border-radius: 6px; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+#formMsg { margin-top: .5rem; text-align: center; }
+
+/* Footer (café) */
+.site-footer { background: var(--coffee); color: #fff; padding: 1rem 0; text-align: center; margin-top: 2rem; }
+
+/* Section headers centered & brown */
+#about h3, #projects h3, #skills h3 { text-align: center; color: brown; }
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .home { grid-template-columns: 1fr; text-align: center; }
+  .home-right { margin-top: 1rem; }
+
+  .about { display: block; text-align: center; }
+  .about-photo { position: static; width: 220px; height: 220px; margin: 1rem auto 0; border-radius: 50%; }
+  .about-text { margin-right: 0; }
+
+  .project-card { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .nav-list {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 56px;
+    background: var(--coffee);
+    padding: .6rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    flex-direction: column;
+  }
+  .nav-toggle { display: inline-block; }
+}
+
+/* Focus styles */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid rgba(10,102,194,0.15);
+  outline-offset: 2px;
+}
+
+.centrer{
+  text-align: center;
+}
+

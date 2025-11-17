@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  
+}
+
+#resultat {
+  margin-top: 50px;
+  color: #964B00; /* Couleur café */
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #000; /* Bordure noire */
+}
+
+th, td {
+  border: 1px solid #000; /* Bordure noire */
+  padding: 10px;
+  color: #0000FF; /* Couleur bleue */
+}

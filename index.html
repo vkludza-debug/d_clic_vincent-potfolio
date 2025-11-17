@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Kofi Vincent KLUDZA</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Kofi Vincent <span class="surname">Votre Nom</span></h1>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Basculer le menu">☰</button>
+        <ul id="nav" class="nav-list">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#projects">Mes projets</a></li>
+          <li><a href="#skills">Mes compétences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1 : Accueil -->
+    <section id="home" class="section home container">
+      <div class="home-left">
+        <h2>Bonjour — Je suis Vincent</h2>
+        <p class="lead" text-gauche>
+          Je suis logisticien de formation et développeur / designer en devenir.
+          passionné par les métiers du web et soucieux d'aider ma communauté à 
+          héradiquer le fléau de cyber criminalité 
+          je me suis lancé dans cette belle aventure.
+        </p>
+
+        <p class="cta">
+          <a class="btn" href="#projects">Voir mes projets</a>
+        </p>
+      </div>
+
+      <div class="home-right">
+        <img src="images/ordi.jpg" alt="Illustration ordinateur" class="hero-img" />
+      </div>
+    </section>
+
+    <!-- SECTION 2 : A propos -->
+    <section id="about" class="section about container">
+      <div class="about-text">
+        <h3>À propos</h3>
+        <p>
+          Avec une licence en logistique des transports,
+          je suis doué dans la gestion de stock, la logistique de marchandise et de voiture
+          et avec mes notions de debutant en développement web, je suis capable de créer 
+          quelques fonctions et feuilles de calcule
+        </p>
+
+        <p class="download-cv">
+          <a class="btn ghost" href='cv.pdf/cv Vincent .pdf' download>Télécharger mon CV</a>
+        </p>
+      </div>
+
+      <div class="about-photo">
+        <img src="images/ma photo.jpg" alt="Photo de vous" class="profile-photo" />
+      </div>
+    </section>
+
+    <!-- SECTION 3 : Projets -->
+    <section id="projects" class="section projects container">
+      <h3>Mes projets</h3>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-body">
+            <h4>Projet 1</h4>
+            <p>Voici un exemplaire de fiche de stock de véhicule réceptionnés.</p>
+            <p class="links">
+              <a href="projet1.html">Voir le projet</a>
+              
+            </p>
+          </div>
+          
+        </article>
+
+        <article class="project-card">
+          <div class="project-body">
+            <h4>Projet 2</h4>
+            <p>Un mini calculateur de date d'aniversaire basé sur Js.</p>
+            <p class="links">
+              <a href="projet2.html">Voir le projet</a>
+            </p>
+          </div>
+          
+        </article>
+
+        <article class="project-card">
+          <div class="project-body">
+            <h4>Projet 3</h4>
+            <p>Un formulaire en ligne pour reservver une place en ligne pour un évenement.</p>
+            <p class="links">
+             <a href="projet3.html">Voir le projet</a>
+            </p>
+          </div>
+          
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : Compétences -->
+    <section id="skills" class="section skills container">
+      <h3>Mes compétences</h3>
+
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>Hard Skills</h4>
+          <div class="skill">
+            <span class="skill-name">HTML</span>
+            <div class="bar"><span style="width:90%"></span></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">CSS</span>
+            <div class="bar"><span style="width:85%"></span></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Java script</span>
+            <div class="bar"><span style="width:60%"></span></div>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <h4>Soft Skills</h4>
+          <div class="skill">
+            <span class="skill-name">Communication</span>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Travail en équipe</span>
+            <div class="bar"><span style="width:85%"></span></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Gestion de projet</span>
+            <div class="bar"><span style="width:70%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 : Contact -->
+    <section id="contact" class="section contact container">
+      <h3>Contact</h3>
+      <p>Désirez-Vous mes services? Vous pouvez me contacter via ce formulaire :</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cname">Nom</label>
+          <input id="cname" name="name" type="text" required />
+        </div>
+
+         <div class="form-row">
+          <label for="cname">Prénom</label>
+          <input id="cname" name="name" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="cemail">Email</label>
+          <input id="cemail" name="email" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="cmessage">Message</label>
+          <textarea id="cmessage" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Envoyer</button>
+          <button type="button" id="resetBtn" class="btn ghost">Réinitialiser</button>
+        </div>
+
+        <p id="formMsg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Votre Prénom Nom — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

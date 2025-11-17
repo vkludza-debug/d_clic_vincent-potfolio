@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foire Togo 2000 - Reservation</title>
+  <link rel="stylesheet" href="projet3.css">
+</head>
+<body>
+  <h1>Foire Togo 2000 - Réservation de places</h1>
+  <form id="inscription-form">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+
+    <label for="sexe">Sexe :</label>
+    <select id="sexe" name="sexe" required>
+      <option value="">Sélectionner</option>
+      <option value="Masculin">Masculin</option>
+      <option value="Féminin">Féminin</option>
+    </select>
+
+    <label for="nombre-place">Nombre de places :</label>
+    <input type="number" id="nombre-place" name="nombre-place" required>
+
+    <button type="submit">Inscription</button>
+  </form>
+  <div id="resultat"></div>
+
+  <script src="projet3.js"></script>
+</body>
+</html>

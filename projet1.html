@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche de stock de véhicule</title>
+  <link rel="stylesheet" href="projet1.css">
+ 
+</head>
+<body>
+  <h1>Fiche de stock de véhicule</h1>
+  <table>
+    <tr>
+      <th>Date d'arrivée</th>
+      <td><input type="date" id="date-arrivee" name="date-arrivee"></td>
+    </tr>
+    <tr>
+      <th>Nom de véhicule</th>
+      <td><input type="text" id="nom-vehicule" name="nom-vehicule"></td>
+    </tr>
+    <tr>
+      <th>Année</th>
+      <td><input type="number" id="annee" name="annee"></td>
+    </tr>
+    <tr>
+      <th>Numéro de châssis</th>
+      <td><input type="text" id="numero-chassis" name="numero-chassis"></td>
+    </tr>
+    <tr>
+      <th>Couleur</th>
+      <td><input type="text" id="couleur" name="couleur"></td>
+    </tr>
+  </table>
+  <button onclick="enregistrer()">Enregistrer</button>
+  <h2>Historique des enregistrements :</h2>
+  <table id="resultat-table">
+    <thead>
+      <tr>
+        <th>Date d'arrivée</th>
+        <th>Nom de véhicule</th>
+        <th>Année</th>
+        <th>Numéro de châssis</th>
+        <th>Couleur</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="resultat-body">
+    </tbody>
+  </table>
+  <div id="enregistrer-btn">
+  
+
+
+  <script>
+    let enregistrements = [];
+    let indexAModifier = null;
+
+    function enregistrer() {
+      const dateArrivee = document.getElementById("date-arrivee").value;
+      const nomVehicule = document.getElementById("nom-vehicule").value;
+      const annee = document.getElementById("annee").value;
+      const numeroChassis = document.getElementById("numero-chassis").value;
+      const couleur = document.getElementById("couleur").value;
+
+      if (indexAModifier === null) {
+        enregistrements.push({
+          dateArrivee,
+          nomVehicule,
+          annee,
+          numeroChassis,
+          couleur
+        });
+      } else {
+        enregistrements[indexAModifier] = {
+          dateArrivee,
+          nomVehicule,
+          annee,
+          numeroChassis,
+          couleur
+        };
+        indexAModifier = null;
+      }
+
+      afficherEnregistrements();
+      viderChamps();
+    }
+
+    function afficherEnregistrements() {
+      const tbody = document.getElementById("resultat-body");
+      tbody.innerHTML = "";
+
+      enregistrements.forEach((enregistrement, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${enregistrement.dateArrivee}</td>
+          <td>${enregistrement.nomVehicule}</td>
+          <td>${enregistrement.annee}</td>
+          <td>${enregistrement.numeroChassis}</td>
+          <td>${enregistrement.couleur}</td>
+          <td>
+            <button onclick="modifier(${index})">Modifier</button>
+            <button onclick="supprimer(${index})">Supprimer</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function modifier(index) {
+      const enregistrement = enregistrements[index];
+      document.getElementById("date-arrivee").value = enregistrement.dateArrivee;
+      document.getElementById("nom-vehicule").value = enregistrement.nomVehicule;
+      document.getElementById("annee").value = enregistrement.annee;
+      document.getElementById("numero-chassis").value = enregistrement.numeroChassis;
+      document.getElementById("couleur").value = enregistrement.couleur;
+      indexAModifier = index;
+    }
+
+    function supprimer(index) {
+      enregistrements.splice(index, 1);
+      afficherEnregistrements();
+    }
+
+    function viderChamps() {
+      document.getElementById("date-arrivee").value = "";
+      document.getElementById("nom-vehicule").value = "";
+      document.getElementById("annee").value = "";
+      document.getElementById("numero-chassis").value = "";
+      document.getElementById("couleur").value = "";
+    }
+  </script>
+</body>
+</html>
